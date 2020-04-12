@@ -1,0 +1,31 @@
+{
+  "version": "1.0.0",
+  "name": "tu-as-l-heure-pro",
+  "description": "Fitbit's Versa clockface which tells time in French.",
+  "private": true,
+  "license": "GNU",
+  "fitbit": {
+    "appType": "clockface",
+    "appDisplayName": "Tu as l'heure? PRO",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "",
+    "requestedPermissions": [],
+    "buildTargets": [
+      "meson"
+    ],
+    "i18n": {
+      "en": {
+        "name": "Tu as l'heure?"
+      }
+    },
+    "appUUID": "eb7f36bd-ef00-4b9a-bd19-e01475e3c148"
+  },
+  "scripts": {
+    "test": "ts-mocha --paths -p ../../tsconfig.test.json test/**/*spec.ts",
+    "build": "fitbit-build",
+    "start": "fitbit",
+    "preversion": "npm run test",
+    "postversion": "npm run build && cp build/app.fba releases/que-hora-es-${npm_package_version}.fba"
+  },
+  "dependencies": {}
+}

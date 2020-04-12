@@ -1,0 +1,8 @@
+<svg class="background">
+  <image id="icon-heart" href="heart.png" x="3" y="5" />
+  <text id="day" class="text"/>
+  <text id="time" class="text"/>
+  <text id="hour" class="text"/>
+  <text id="minute" class="text"/>
+  <text id="ampm" class="text"/>
+</svg>

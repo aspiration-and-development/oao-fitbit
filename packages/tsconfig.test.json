@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+		"paths": {
+			"@/utils/*": [ "utils/*" ],
+			"@/utils": [ "utils/index" ]
+		},
+        "sourceMap": false,
+        "isolatedModules": true
+    },
+    "include": ["**/*.ts", "**/*.tsx"]
+}
