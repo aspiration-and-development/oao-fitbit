@@ -3,26 +3,36 @@ function mySettings(props: {settings: any}) {
     return (
         <Page>
             <Select
-                label="I want time like..."
+                label="Type"
                 settingsKey="level"
                 options={[
                     {
-                        name: "Simple, numbers.",
-                        value: 'simple'
+                        name: "Simple, just numbers.",
+                        value: 'simple',
                     },
                     {
-                        name: "In Latin America.",
+                        name: "Latin America.",
                         value: 'latin'
                     },
                     {
-                        name: "In Spain.",
+                        name: "Spain.",
                         value: 'spain'
                     }]
                 }
             />
-            <Toggle
-                settingsKey="military"
-                label="Use military time (24 hours)"
+            <Select
+                label="Style"
+                settingsKey="style"
+                options={[
+                    {
+                        name: "Plain",
+                        value: 'plain'
+                    },
+                    {
+                        name: "Color",
+                        value: 'color'
+                    }]
+                }
             />
         </Page>
     );

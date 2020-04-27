@@ -1,21 +1,45 @@
 import clock from "clock";
-import document from "document";
 import { preferences } from "user-settings";
 import getRandomItem from "@/utils/getRandomItem";
 import init, { Usettings } from "./settings";
 import horasDeEspanol from "./horas-de-espanol";
+import { FitFont } from 'fitfont';
 // Update the clock every minute
 clock.granularity = "minutes";
 
-// Get a handle on the <text> element
-const indicatorDeAmPm = document.getElementById("ampm");
-const indicatorDeVez = document.getElementById("vez");
-const indicatorDeDia = document.getElementById("dia");
-const indicatorDeHora = document.getElementById("hora");
-const indicatorDeMinuto = document.getElementById("minuto");
+const vez = new FitFont({ 
+    id:'vez',               // id of your symbol in the index.gui, you can also give an element object e.g. id: document.getElementById('foo')
+    font:'Patterns_&_Dots_40',  // name of the generated font folder
 
-// const { clockDisplay } = preferences;
-// clockDisplay === "12h" ? false : true
+    // Optional
+    halign: 'middle',            // horizontal alignment : start / middle / end
+    // valign: 'baseline',         // vertical alignment   : baseline / top / middle / bottom
+    // letterspacing: 0            // letterspacing...
+});
+
+const hora = new FitFont({ 
+  id:'hora',               // id of your symbol in the index.gui, you can also give an element object e.g. id: document.getElementById('foo')
+  font:'Patterns_&_Dots_40',  // name of the generated font folder
+  halign: 'middle',            // horizontal alignment : start / middle / end
+});
+
+const minuto = new FitFont({ 
+  id:'minuto',               // id of your symbol in the index.gui, you can also give an element object e.g. id: document.getElementById('foo')
+  font:'Patterns_&_Dots_40',  // name of the generated font folder
+  halign: 'middle',            // horizontal alignment : start / middle / end
+});
+
+const diafont = new FitFont({ 
+  id:'dia',               // id of your symbol in the index.gui, you can also give an element object e.g. id: document.getElementById('foo')
+  font:'Patterns_&_Dots_40',  // name of the generated font folder
+  halign: 'middle',            // horizontal alignment : start / middle / end
+});
+
+const ampmfont = new FitFont({ 
+  id:'ampm',               // id of your symbol in the index.gui, you can also give an element object e.g. id: document.getElementById('foo')
+  font:'Patterns_&_Dots_40',  // name of the generated font folder
+  halign: 'middle',            // horizontal alignment : start / middle / end
+});
 
 const STATE: {
   settings: Usettings
@@ -32,22 +56,18 @@ const STATE: {
 }
 
 function render () {
-  let {
-    settings: {
-      military
-    },
+  const {
     dia,
     horas,
     minutos,
   } = STATE
-  if (military === null)
-    military = preferences.clockDisplay === '24h' ? true : false
+  const military = preferences.clockDisplay === '24h' ? true : false
   const usarHorasCortas = !military
-
+  
   const usarEnPunto = getRandomItem([1, 0]);
   const usarCon = getRandomItem([0, 1]);
   const usarY = getRandomItem([1, 0]);
-
+  
   const {
     tiempo,
     horasLeteras,
@@ -61,18 +81,18 @@ function render () {
     usarCon,
     usarY
   });
-
+  
   const tampm = military ? '' : cuando
-  indicatorDeVez.text = `${tiempo}`;
-  indicatorDeDia.text = `${diaDeSemana}`;
-  indicatorDeHora.text = `${horasLeteras}`;
-  indicatorDeMinuto.text = `${preMinuto} ${minutosLeteras}`;
-  indicatorDeAmPm.text = `${tampm}`;
+  vez.text = `${tiempo.toUpperCase()}`;
+  hora.text = `${horasLeteras.toUpperCase()}`
+  minuto.text = `${preMinuto} ${minutosLeteras.toUpperCase()}`
+  diafont.text = `${diaDeSemana.toUpperCase()}`
+  ampmfont.text = `${tampm.toUpperCase()}`
 }
 
 init((settings: Usettings) => {
   STATE.settings = settings
-
+  
   render()
 })
 

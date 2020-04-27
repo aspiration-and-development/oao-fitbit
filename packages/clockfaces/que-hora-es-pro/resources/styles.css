@@ -1,39 +1,61 @@
-.background {
-  viewport-fill: black;
-}
-
-.text {
-  font-family: System-Bold;
-  text-length: 32;
-  text-anchor: middle;
-  fill: white;
-}
-#ampm {
-  font-size: 40;
-  x: 50%;
-  y: 95%;
+#root {
+  viewport-fill: #000000;
 }
 
 #vez {
-  font-size: 50;
   x: 50%;
   y: 15%;
-}
-
-#dia {
-  font-size: 60;
-  x: 50%;
-  y: 70%;
+  fill: green;
 }
 
 #hora {
-  font-size: 50;
   x: 50%;
   y: 35%;
+  fill: green;
 }
 
 #minuto {
-  font-size: 35;
   x: 50%;
   y: 35%+40;
+  fill: green;
+}
+
+#dia {
+  x: 50%;
+  y: 70%;
+  fill: green;
+}
+
+#ampm {
+  x: 50%;
+  y: 95%;
+  fill: green;
+}
+
+.r {
+  fill: #fd0505;
+}
+
+.y {
+  fill: #eeff00;
+}
+
+.b {
+  fill: #416afc;
+}
+
+.o {
+  fill: #fd510d;
+}
+
+.g {
+  fill: #04f410;
+}
+
+.m {
+  fill: #00f2ff;
+}
+
+.p {
+  fill: #f808c4;
 }

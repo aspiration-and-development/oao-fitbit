@@ -1,5 +1,6 @@
 import { escribeNumero } from "./numeros-de-espanol"
-
+import { horasStringList } from "../strings";
+ 
 const MAX_MINUTOS_LENGTH = 15
 
 export type Opciones = {
@@ -22,18 +23,6 @@ export type HorasNormales = {
     diaDeSemana: string
 }
 
-const laMapaDeDiasDeSemana = [
-    'domingo',
-    'lunes',
-    'martes',
-    'miércoles',
-    'jueves',
-    'viernes',
-    'sábado',
-];
-
-
-
 export default (
     dia: number,
     horas: number,
@@ -53,26 +42,26 @@ export default (
   let isPunto = minutos === 0
   let isSingular = horasPorUsar === 1
   
-  let tiempo = `Son las`
-  if (isSingular) tiempo = `Es la`
+  let tiempo = horasStringList['Son las'].value;
+  if (isSingular) tiempo = horasStringList['Es la'].value;
   
-  const diaDeSemana = laMapaDeDiasDeSemana[dia];
+  const diaDeSemana = horasStringList[dia].value;
   
-  let cuando = 'de la mañana'
-  if (horas < 6) cuando = 'de la madrugada'
-  if (horas >= 12) cuando = 'del mediadia'
-  if (horas >= 13) cuando = 'de la tarde'
-  if (horas > 20) cuando = 'de la noche'
+  let cuando = horasStringList['de la mañana'].value
+  if (horas < 6) cuando = horasStringList['de la madrugada'].value
+  if (horas >= 12) cuando = horasStringList['del mediadia'].value
+  if (horas >= 13) cuando = horasStringList['de la tarde'].value
+  if (horas > 20) cuando = horasStringList['de la noche'].value
   
   let minutosLeteras = minutosLeterasRaw.join(' y ')
   let isComposed = minutosLeteras.length === 2
   let preMinuto = ''
   if (isPunto && usarEnPunto) {
-      minutosLeteras = 'en punto'
+      minutosLeteras = horasStringList['en punto'].value
     } else if (usarCon && minutosLeteras.length + 5 <= MAX_MINUTOS_LENGTH) {
-        preMinuto = 'con'
+        preMinuto = horasStringList['con'].value
     } else if (usarY && minutosLeteras.length + 3 <= MAX_MINUTOS_LENGTH && !isComposed) {
-        preMinuto = 'y'
+        preMinuto = horasStringList['y'].value
     }
 
 

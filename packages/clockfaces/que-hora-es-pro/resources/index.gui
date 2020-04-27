@@ -1,7 +1,68 @@
-<svg class="background">
-  <text id="vez" class="text"/>
-  <text id="hora" class="text"/>
-  <text id="minuto" class="text"/>
-  <text id="dia" class="text"/>
-  <text id="ampm" class="text"/>
+<svg id="root">
+	<use href="#fitfont" id="vez">
+		<use class="r" href="#fitfont-char" />
+		<use class="y" href="#fitfont-char" />
+		<use class="o" href="#fitfont-char" />
+		<use class="m" href="#fitfont-char" />
+		<use class="g" href="#fitfont-char" />
+		<use class="m" href="#fitfont-char" />
+		<use class="p" href="#fitfont-char" />
+	</use>
+	<use href="#fitfont" id="hora">
+		<use class="p" href="#fitfont-char" />
+		<use class="b" href="#fitfont-char" />
+		<use class="g" href="#fitfont-char" />
+		<use class="o" href="#fitfont-char" />
+		<use class="r" href="#fitfont-char" />
+		<use class="y" href="#fitfont-char" />
+	</use>
+	<use href="#fitfont" id="minuto">
+		<use class="p" href="#fitfont-char" />
+		<use class="b" href="#fitfont-char" />
+		<use class="g" href="#fitfont-char" />
+		<use class="o" href="#fitfont-char" />
+		<use class="r" href="#fitfont-char" />
+		<use class="y" href="#fitfont-char" />
+		<use class="p" href="#fitfont-char" />
+		<use class="b" href="#fitfont-char" />
+		<use class="g" href="#fitfont-char" />
+		<use class="o" href="#fitfont-char" />
+		<use class="r" href="#fitfont-char" />
+		<use class="y" href="#fitfont-char" />
+		<use class="p" href="#fitfont-char" />
+		<use class="b" href="#fitfont-char" />
+		<use class="g" href="#fitfont-char" />
+		<use class="o" href="#fitfont-char" />
+		<use class="r" href="#fitfont-char" />
+		<use class="y" href="#fitfont-char" />
+	</use>
+	<use href="#fitfont" id="dia">
+		<use class="p" href="#fitfont-char" />
+		<use class="b" href="#fitfont-char" />
+		<use class="g" href="#fitfont-char" />
+		<use class="o" href="#fitfont-char" />
+		<use class="r" href="#fitfont-char" />
+		<use class="y" href="#fitfont-char" />
+		<use class="g" href="#fitfont-char" />
+		<use class="o" href="#fitfont-char" />
+		<use class="r" href="#fitfont-char" />
+		<use class="y" href="#fitfont-char" />
+	</use>
+	<use href="#fitfont" id="ampm">
+		<use class="p" href="#fitfont-char" />
+		<use class="b" href="#fitfont-char" />
+		<use class="g" href="#fitfont-char" />
+		<use class="o" href="#fitfont-char" />
+		<use class="r" href="#fitfont-char" />
+		<use class="y" href="#fitfont-char" />
+		<use class="g" href="#fitfont-char" />
+		<use class="o" href="#fitfont-char" />
+		<use class="r" href="#fitfont-char" />
+		<use class="y" href="#fitfont-char" />
+		<use class="o" href="#fitfont-char" />
+		<use class="r" href="#fitfont-char" />
+		<use class="y" href="#fitfont-char" />
+		<use class="g" href="#fitfont-char" />
+		<use class="o" href="#fitfont-char" />
+	</use>
 </svg>
