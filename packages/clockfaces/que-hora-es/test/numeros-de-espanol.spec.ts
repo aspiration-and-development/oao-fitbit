@@ -1,7 +1,7 @@
 import * as assert from 'assert'
 import 'mocha'
 
-import {escribeNumero} from '../app/numeros-de-espanol'
+import {escribeNumero} from '../shared/numeros-de-espanol'
 
 describe('Numeros de espanol', function () {
     // let horasPorUsar = usarHorasCortas ? (horas % 12) || 12 : horas;

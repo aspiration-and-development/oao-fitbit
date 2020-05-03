@@ -1,9 +1,7 @@
 {
   "version": "0.0.0",
-  "name": "que-hora-es",
+  "name": "que-hora-es-pro",
   "description": "Fitbit's Versa clockface which tells time in Spanish.",
-  "private": true,
-  "license": "GNU",
   "fitbit": {
     "appUUID": "982e3ff6-60c2-452c-bc38-f199a3e0658d",
     "appType": "clockface",
@@ -28,7 +26,5 @@
     "postversion": "npm run build && cp build/app.fba releases/que-hora-es-${npm_package_version}.fba"
   },
   "dependencies": {},
-  "devDependencies": {
-    "fitbit-sdk-types": "^4.3.5"
-  }
+  "devDependencies": {}
 }

@@ -34,6 +34,10 @@ function mySettings(props: {settings: any}) {
                     }]
                 }
             />
+            <Toggle
+                settingsKey="military"
+                label="Use military time (24 hours)"
+            />
         </Page>
     );
 }

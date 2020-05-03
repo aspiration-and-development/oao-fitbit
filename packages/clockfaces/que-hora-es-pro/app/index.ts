@@ -2,7 +2,7 @@ import clock from "clock";
 import { preferences } from "user-settings";
 import getRandomItem from "@/utils/getRandomItem";
 import init, { Usettings } from "./settings";
-import horasDeEspanol from "./horas-de-espanol";
+import horasDeEspanol from "@/shared/es/horas-de-espanol";
 import { FitFont } from 'fitfont';
 // Update the clock every minute
 clock.granularity = "minutes";
@@ -57,6 +57,9 @@ const STATE: {
 
 function render () {
   const {
+    settings: {
+      military: settingsMilitary
+    },
     dia,
     horas,
     minutos,
@@ -83,9 +86,9 @@ function render () {
   });
   
   const tampm = military ? '' : cuando
-  vez.text = `${tiempo.toUpperCase()}`;
+  vez.text = `${String(settingsMilitary).toUpperCase()}`;
   hora.text = `${horasLeteras.toUpperCase()}`
-  minuto.text = `${preMinuto} ${minutosLeteras.toUpperCase()}`
+  minuto.text = `${preMinuto.toUpperCase()} ${minutosLeteras.toUpperCase()}`
   diafont.text = `${diaDeSemana.toUpperCase()}`
   ampmfont.text = `${tampm.toUpperCase()}`
 }

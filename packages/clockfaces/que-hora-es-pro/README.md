@@ -4,7 +4,3 @@
 > Fitbit's Versa compatible clockface which tells time in Spanish.
 
 ![](./screenshots/que-hora-es-screenshot.png)
-
-## License
-
-GNU

@@ -1,12 +1,13 @@
 #!/usr/bin/env deno
 
-import { horasStringList, numerosStringList } from './strings.ts';
+import strings from '../que-hora-es/shared/strings.ts';
 
-let strings = [
-    ...Object.values(horasStringList),
-    ...Object.values(numerosStringList)
+const stringsAll = [
+    ...Object.values(strings)
     ]
     .map(({value}) => value)
     .join('');
+const stringDeduped = new Set(Array.from(stringsAll));
+const string = Array.from(stringDeduped).join('');
 
-console.log(strings)
+console.log(string.toUpperCase())

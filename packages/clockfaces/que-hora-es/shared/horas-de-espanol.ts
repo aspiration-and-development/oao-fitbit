@@ -1,5 +1,5 @@
 import { escribeNumero } from "./numeros-de-espanol"
-import { horasStringList } from "../strings";
+import strings from "./strings";
  
 const MAX_MINUTOS_LENGTH = 15
 
@@ -37,31 +37,31 @@ export default (
     } = opciones
 
   let horasPorUsar = usarHorasCortas ? (horas % 12) || 12 : horas
-  let horasLeteras = escribeNumero(horasPorUsar).pop()
+  let horasLeteras = escribeNumero(horasPorUsar)[0];
   let minutosLeterasRaw = escribeNumero(minutos)
   let isPunto = minutos === 0
   let isSingular = horasPorUsar === 1
   
-  let tiempo = horasStringList['Son las'].value;
-  if (isSingular) tiempo = horasStringList['Es la'].value;
+  let tiempo = strings['son-las'].value;
+  if (isSingular) tiempo = strings['es-la'].value;
   
-  const diaDeSemana = horasStringList[dia].value;
+  const diaDeSemana = strings[`dia-${dia}`].value;
   
-  let cuando = horasStringList['de la mañana'].value
-  if (horas < 6) cuando = horasStringList['de la madrugada'].value
-  if (horas >= 12) cuando = horasStringList['del mediadia'].value
-  if (horas >= 13) cuando = horasStringList['de la tarde'].value
-  if (horas > 20) cuando = horasStringList['de la noche'].value
+  let cuando = strings['mañana'].value
+  if (horas < 6) cuando = strings['madrugada'].value
+  if (horas >= 12) cuando = strings['mediadia'].value
+  if (horas >= 13) cuando = strings['tarde'].value
+  if (horas > 20) cuando = strings['noche'].value
   
-  let minutosLeteras = minutosLeterasRaw.join(' y ')
+  let minutosLeteras = minutosLeterasRaw.join(` ${strings['y'].value} `)
   let isComposed = minutosLeteras.length === 2
   let preMinuto = ''
   if (isPunto && usarEnPunto) {
-      minutosLeteras = horasStringList['en punto'].value
+      minutosLeteras = strings['punto'].value
     } else if (usarCon && minutosLeteras.length + 5 <= MAX_MINUTOS_LENGTH) {
-        preMinuto = horasStringList['con'].value
+        preMinuto = strings['con'].value
     } else if (usarY && minutosLeteras.length + 3 <= MAX_MINUTOS_LENGTH && !isComposed) {
-        preMinuto = horasStringList['y'].value
+        preMinuto = strings['y'].value
     }
 
 

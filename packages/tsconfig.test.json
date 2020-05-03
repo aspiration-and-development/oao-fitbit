@@ -2,8 +2,8 @@
     "compilerOptions": {
         "baseUrl": ".",
 		"paths": {
-			"@/utils/*": [ "utils/*" ],
-			"@/utils": [ "utils/index" ]
+			"@/shared/*": [ "shared/*" ],
+			"@/es/*": [ "clockfaces/que-hora-es/shared/*" ]
 		},
         "sourceMap": false,
         "isolatedModules": true
