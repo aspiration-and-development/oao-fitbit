@@ -14,8 +14,6 @@ const hora = document.getElementById("hora");
 const minuto = document.getElementById("minuto");
 const diaIndicator = document.getElementById("dia");
 
-const { clockDisplay } = preferences;
-
 type UserSettings = {
   mostrarDia: boolean;
 }
@@ -41,6 +39,7 @@ function render () {
     horas,
     minutos,
   } = STATE
+  const { clockDisplay } = preferences;
   const usarHorasCortas = clockDisplay === "12h" ? true : false;
 
   const usarEnPunto = getRandomItem([1, 0]);
@@ -60,7 +59,7 @@ function render () {
     usarCon,
     usarY
   });
-    const tampm = usarHorasCortas ? '' : cuando
+    const tampm = usarHorasCortas ? cuando : '';
     vez && (vez.text = `${tiempo}`);
     hora && (hora.text = `${horasLeteras}`);
     minuto && (minuto.text = `${preMinuto} ${minutosLeteras}`);
