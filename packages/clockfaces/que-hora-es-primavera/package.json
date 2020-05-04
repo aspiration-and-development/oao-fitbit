@@ -1,11 +1,11 @@
 {
   "version": "0.0.0",
-  "name": "que-hora-es-pro",
+  "name": "que-hora-es-primavera",
   "description": "Fitbit's Versa clockface which tells time in Spanish.",
   "fitbit": {
     "appUUID": "982e3ff6-60c2-452c-bc38-f199a3e0658d",
     "appType": "clockface",
-    "appDisplayName": "Que hora es? PRO",
+    "appDisplayName": "Que hora es? Primavera",
     "iconFile": "resources/icon.png",
     "wipeColor": "",
     "requestedPermissions": [],
@@ -14,7 +14,7 @@
     ],
     "i18n": {
       "en": {
-        "name": "Que hora es? PRO"
+        "name": "Que hora es? Primavera"
       }
     }
   },
