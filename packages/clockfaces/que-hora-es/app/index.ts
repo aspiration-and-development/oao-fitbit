@@ -52,14 +52,15 @@ function render () {
     preMinuto,
     minutosLeteras,
     diaDeSemana,
-    cuando
+    cuando,
+    cuandoPre,
   } = horasDeEspanol(dia, horas, minutos, {
     usarEnPunto,
     usarHorasCortas,
     usarCon,
     usarY
   });
-    const tampm = usarHorasCortas ? cuando : '';
+    const tampm = usarHorasCortas ? `${cuandoPre} ${cuando}` : '';
     vez && (vez.text = `${tiempo}`);
     hora && (hora.text = `${horasLeteras}`);
     minuto && (minuto.text = `${preMinuto} ${minutosLeteras}`);

@@ -16,7 +16,8 @@ describe('Horas de espanol', function () {
         horasLeteras: 'una',
         minutosLeteras: 'en punto',
         preMinuto: '',
-        cuando: 'de la madrugada',
+        cuandoPre: 'de la',
+        cuando: 'madrugada',
         diaDeSemana: 'lunes'
       });
     });
@@ -28,7 +29,8 @@ describe('Horas de espanol', function () {
         horasLeteras: 'una',
         minutosLeteras: 'en punto',
         preMinuto: '',
-        cuando: 'de la tarde',
+        cuandoPre: 'de la',
+        cuando: 'tarde',
         diaDeSemana: 'martes'
       });
     });
@@ -40,7 +42,8 @@ describe('Horas de espanol', function () {
         horasLeteras: 'doce',
         minutosLeteras: 'en punto',
         preMinuto: '',
-        cuando: 'del mediadia',
+        cuandoPre: 'del',
+        cuando: 'mediadia',
         diaDeSemana: 'miércoles'
       });
     });
@@ -52,7 +55,8 @@ describe('Horas de espanol', function () {
         horasLeteras: 'doce',
         minutosLeteras: 'en punto',
         preMinuto: '',
-        cuando: 'de la madrugada',
+        cuandoPre: 'de la',
+        cuando: 'madrugada',
         diaDeSemana: 'jueves'
       });
     });

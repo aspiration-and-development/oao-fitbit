@@ -15,6 +15,12 @@
 		<use class="o" href="#fitfont-char" />
 		<use class="r" href="#fitfont-char" />
 		<use class="y" href="#fitfont-char" />
+		<use class="p" href="#fitfont-char" />
+		<use class="b" href="#fitfont-char" />
+		<use class="g" href="#fitfont-char" />
+		<use class="o" href="#fitfont-char" />
+		<use class="r" href="#fitfont-char" />
+		<use class="y" href="#fitfont-char" />
 	</use>
 	<use href="#fitfont" id="minuto">
 		<use class="p" href="#fitfont-char" />
@@ -36,6 +42,24 @@
 		<use class="r" href="#fitfont-char" />
 		<use class="y" href="#fitfont-char" />
 	</use>
+	<use href="#fitfont" id="minuto-overflow">
+		<use class="g" href="#fitfont-char" />
+		<use class="y" href="#fitfont-char" />
+		<use class="o" href="#fitfont-char" />
+		<use class="r" href="#fitfont-char" />
+		<use class="y" href="#fitfont-char" />
+		<use class="p" href="#fitfont-char" />
+		<use class="b" href="#fitfont-char" />
+		<use class="g" href="#fitfont-char" />
+		<use class="o" href="#fitfont-char" />
+		<use class="r" href="#fitfont-char" />
+		<use class="y" href="#fitfont-char" />
+		<use class="p" href="#fitfont-char" />
+		<use class="b" href="#fitfont-char" />
+		<use class="g" href="#fitfont-char" />
+		<use class="o" href="#fitfont-char" />
+		<use class="r" href="#fitfont-char" />
+	</use>
 	<use href="#fitfont" id="dia">
 		<use class="p" href="#fitfont-char" />
 		<use class="b" href="#fitfont-char" />
@@ -47,6 +71,15 @@
 		<use class="o" href="#fitfont-char" />
 		<use class="r" href="#fitfont-char" />
 		<use class="y" href="#fitfont-char" />
+	</use>
+	<use href="#fitfont" id="pre">
+		<use class="r" href="#fitfont-char" />
+		<use class="y" href="#fitfont-char" />
+		<use class="o" href="#fitfont-char" />
+		<use class="m" href="#fitfont-char" />
+		<use class="g" href="#fitfont-char" />
+		<use class="m" href="#fitfont-char" />
+		<use class="p" href="#fitfont-char" />
 	</use>
 	<use href="#fitfont" id="ampm">
 		<use class="p" href="#fitfont-char" />
@@ -65,4 +98,5 @@
 		<use class="g" href="#fitfont-char" />
 		<use class="o" href="#fitfont-char" />
 	</use>
+	<image id="image" href="bg.png" />
 </svg>

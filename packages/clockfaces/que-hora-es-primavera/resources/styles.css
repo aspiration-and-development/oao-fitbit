@@ -1,35 +1,63 @@
 #root {
-  viewport-fill: #000000;
+  viewport-fill: #25353D;
+}
+
+#image {
+  opacity: 0.1;
 }
 
 #vez {
   x: 50%;
-  y: 15%;
-  fill: green;
+  y: 10%;
+  fill: #ff6f61;
 }
 
 #hora {
   x: 50%;
   y: 35%;
-  fill: green;
+  fill: #ff6f61;
+}
+
+.mostrar-dia #hora {
+  y: 22%;
 }
 
 #minuto {
   x: 50%;
-  y: 35%+40;
-  fill: green;
+  y: 35%+52;
+  fill: #ff6f61;
+}
+
+.mostrar-dia #minuto {
+  y: 22%+52;
+}
+
+#minuto-overflow {
+  x: 50%;
+  y: 35%+82;
+  fill: #ff6f61;
+}
+
+.mostrar-dia #minuto-overflow {
+  y: 22%+82;
 }
 
 #dia {
   x: 50%;
-  y: 70%;
-  fill: green;
+  y: 65%;
+  fill: #ff6f61;
+}
+
+#pre {
+  x: 50%;
+  y: 83%;
+  fill: #ff6f61;
 }
 
 #ampm {
   x: 50%;
   y: 95%;
-  fill: green;
+  fill: #ff6f61;
 }
 
 .r {
@@ -41,7 +69,7 @@
 }
 
 .b {
-  fill: #416afc;
+  fill: #a5b8fd;
 }
 
 .o {
