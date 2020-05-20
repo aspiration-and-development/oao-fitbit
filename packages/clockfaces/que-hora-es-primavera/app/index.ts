@@ -11,54 +11,57 @@ clock.granularity = "minutes";
 
 type Usettings = {
   mostrarDia: boolean;
+  usarHorasCortas: boolean;
 };
 
 const root = document.getElementById("root");
 
 const vez = new FitFont({
   id: "vez", // id of your symbol in the index.gui, you can also give an element object e.g. id: document.getElementById('foo')
-  font: "HotTamale_40", // name of the generated font folder
+  font: "Retwisted_30", // name of the generated font folder
 
   // Optional
   halign: "middle", // horizontal alignment : start / middle / end
   // valign: 'baseline',         // vertical alignment   : baseline / top / middle / bottom
-  // letterspacing: 0            // letterspacing...
+  letterspacing: 0
 });
 
 const hora = new FitFont({
   id: "hora",
-  font: "HotTamale_45",
+  font: "Retwisted_43",
   halign: "middle",
+  letterspacing: -2
 });
 
 const minuto = new FitFont({
   id: "minuto",
-  font: "HotTamale_35",
+  font: "Retwisted_37",
   halign: "middle",
 });
 
 const minutoOverflow = new FitFont({
   id: "minuto-overflow",
-  font: "HotTamale_35",
+  font: "Retwisted_37",
   halign: "middle",
 });
 
 const diafont = new FitFont({
   id: "dia",
-  font: "HotTamale_45",
+  font: "Retwisted_43",
   halign: "middle",
 });
 
 const pre = new FitFont({
   id: "pre",
-  font: "HotTamale_40",
+  font: "Retwisted_30",
   halign: "end",
 });
 
 const ampmfont = new FitFont({
   id: "ampm",
-  font: "HotTamale_45",
+  font: "Retwisted_43",
   halign: "middle",
+  letterspacing: -4
 });
 
 const STATE: {
@@ -69,6 +72,7 @@ const STATE: {
 } = {
   settings: {
     mostrarDia: false,
+    usarHorasCortas: false,
   },
   dia: 0,
   horas: 0,
@@ -93,16 +97,27 @@ const removeFromCollection = (collection: string, value: string) => {
 
 function render() {
   const {
-    settings: { mostrarDia },
+    settings: { mostrarDia, usarHorasCortas },
     dia,
     horas,
     minutos,
   } = STATE;
 
-  const usarHorasCortas = preferences.clockDisplay === "24h" ? false : true;
   const usarEnPunto = getRandomItem([1, 0]);
   const usarCon = getRandomItem([0, 1]);
   const usarY = getRandomItem([1, 0]);
+
+  if (mostrarDia) {
+    root.class = addToCollection(root.class, 'mostrar-dia');
+  } else {
+    root.class = removeFromCollection(root.class, 'mostrar-dia');
+  }
+
+  if (usarHorasCortas) {
+    root.class = addToCollection(root.class, 'usar-horas-cortas');
+  } else {
+    root.class = removeFromCollection(root.class, 'usar-horas-cortas');
+  }
 
   const {
     tiempo,
@@ -119,7 +134,7 @@ function render() {
     usarY,
   });
 
-  const isOneLineMinute = minutos > 32;
+  const isOneLineMinute = minutos > 30 && minutos % 10;
 
   const minutoText = isOneLineMinute ? minutosLeterasRaw[0] : minutosLeteras;
   const minutoOverflowText = isOneLineMinute
@@ -127,22 +142,17 @@ function render() {
     : "";
 
   const tampm = usarHorasCortas ? cuando : "";
-  vez.text = `${tiempo.toUpperCase()}`;
-  hora.text = `${horasLeteras.toUpperCase()}`;
-  minuto.text = `${minutoText.toUpperCase()}`;
-  minutoOverflow.text = `${minutoOverflowText.toUpperCase()}`;
-  diafont.text = mostrarDia ? `${diaDeSemana.toUpperCase()}` : "";
-  pre.text = tampm ? cuandoPre.toUpperCase() : "";
-  ampmfont.text = `${tampm.toUpperCase()}`;
+  vez.text = `${tiempo}`;
+  hora.text = `${horasLeteras}`;
+  minuto.text = `${minutoText}`;
+  minutoOverflow.text = `${minutoOverflowText}`;
+  diafont.text = mostrarDia ? `${diaDeSemana}` : "";
+  pre.text = tampm ? cuandoPre : "";
+  ampmfont.text = `${tampm}`;
 }
 
 initialize((settings: Usettings) => {
   STATE.settings = settings;
-  if (settings.mostrarDia) {
-    root.class = addToCollection(root.class, 'mostrar-dia');
-  } else {
-    root.class = removeFromCollection(root.class, 'mostrar-dia');
-  }
   render();
 });
 
@@ -152,10 +162,12 @@ clock.ontick = (evt) => {
   const dia = ahora.getDay();
   const horas = ahora.getHours();
   const minutos = ahora.getMinutes();
+  const usarHorasCortas = preferences.clockDisplay === "24h" ? false : true;
 
   STATE.dia = dia;
   STATE.horas = horas;
   STATE.minutos = minutos;
+  STATE.settings.usarHorasCortas = usarHorasCortas;
 
   render();
 };

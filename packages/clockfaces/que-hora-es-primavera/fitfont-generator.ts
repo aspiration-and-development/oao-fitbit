@@ -27,36 +27,42 @@ const pres = ["mañana", "mediadia", "madrugada", "tarde", "noche"].map(
 );
 
 const stringsPreDeduped = new Set(
-  sonLas + esLa + numbers + punto + y + con + dieci + veinti + pres
+  numbers + punto + y + con + dieci + veinti
 );
-const stringPre = Array.from(stringsPreDeduped).join("").toUpperCase();
+const stringPre = Array.from(stringsPreDeduped).join("");
+
+const stringsVezDeduped = new Set(
+  sonLas + esLa + pres.join("")
+);
+const stringVez = Array.from(stringsVezDeduped).join("");
 
 const stringsRest = [...Object.values(rest)].map(({ value }) => value).join("");
 const stringRestDeduped = new Set(Array.from(stringsRest));
-const stringRest = Array.from(stringRestDeduped).join("").toUpperCase();
+const stringRest = Array.from(stringRestDeduped).join("");
 
 const fitfontGenerate = async (size: number, string: string) => {
   await Deno.run({
     cmd: [
       "rm",
       "-rf",
-      `./resources/HotTamale_${size}`,
+      `./resources/Taco_Modern_${size}`,
     ],
   });
   return Deno.run({
     cmd: [
       "yarn",
       "fitfont-generate",
-      "./assets/Hottaml.ttf",
+      "./assets/Retwisted.ttf",
       String(size),
-      string,
+      `${string}`,
     ],
   }).status();
 };
 
 await Promise.all(
   [
-    fitfontGenerate(35, stringPre),
-    fitfontGenerate(45, stringRest)
+    fitfontGenerate(30, stringVez),
+    fitfontGenerate(37, stringPre),
+    fitfontGenerate(43, stringRest),
   ]
 );
