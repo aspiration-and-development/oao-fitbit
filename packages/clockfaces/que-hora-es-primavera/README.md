@@ -4,7 +4,8 @@ Styled edition of the [¿Que Hora es?](../que-hora-es/README.md)
 
 > Fitbit's Versa compatible clockface which tells time in Spanish.
 
-![](./screenshots/que-hora-es-primavera1.png)
+![](./screenshots/2.png)
+![](./screenshots/5.png)
 
 ### Credits
 
