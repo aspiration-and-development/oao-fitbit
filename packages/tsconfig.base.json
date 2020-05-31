@@ -4,7 +4,8 @@
 		"baseUrl": ".",
 		"paths": {
 			"@/shared/*": [ "shared/*" ],
-			"@/es/*": [ "clockfaces/que-hora-es/shared/*" ]
+			"@/es/*": [ "clockfaces/que-hora-es/shared/*" ],
+			"@/ru/*": [ "clockfaces/skolka-vremya/shared/*" ]
 		},
 		"typeRoots": [
 			"node_modules",

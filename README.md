@@ -12,3 +12,4 @@
 
 - [¿Que Hora Es?](packages/clockfaces/que-hora-es/README.md) 
 - [¿Que Hora Es? ¡Primavera!](packages/clockfaces/que-hora-es-primavera/README.md)
+- [Сколько Время?](packages/clockfaces/skolka-vremya/README.md)

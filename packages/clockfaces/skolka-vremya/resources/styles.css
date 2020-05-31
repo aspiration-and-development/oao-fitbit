@@ -1,0 +1,46 @@
+.background {
+  viewport-fill: black;
+}
+
+.text {
+  font-family: System-Bold;
+  text-length: 32;
+  text-anchor: middle;
+  fill: white;
+}
+
+#day {
+  font-size: 45;
+  x: 50%;
+  y: 15%;
+}
+
+#ampm {
+  font-size: 40;
+  x: 50%;
+  y: 95%;
+}
+
+#hours {
+  font-size: 40;
+  x: 50%;
+  y: 50%-40;
+}
+
+#hours-label {
+  font-size: 30;
+  x: 50%;
+  y: 50%-10;
+}
+
+#minutes {
+  font-size: 35;
+  x: 50%;
+  y: 50%+30;
+}
+
+#minutes-label {
+  font-size: 30;
+  x: 50%;
+  y: 50%+58;
+}

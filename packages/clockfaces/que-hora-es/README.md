@@ -15,7 +15,7 @@ For all Spanish lovers here from the fellow language dabbler. This is a way for 
 
 If you found this project useful and there anything that you feel is not right, than your help is highly appreciated for the sake of the good and proper grammar
 
-## CHANGELOG:
+## Changelog
 
 v1.2.0
  - moved clockface to monorepo

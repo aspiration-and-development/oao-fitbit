@@ -1,0 +1,8 @@
+<svg class="background">
+  <text id="ampm" class="text"/>
+  <text id="hours" class="text"/>
+  <text id="hours-label" class="text"/>
+  <text id="minutes" class="text"/>
+  <text id="minutes-label" class="text"/>
+  <text id="day" class="text"/>
+</svg>
