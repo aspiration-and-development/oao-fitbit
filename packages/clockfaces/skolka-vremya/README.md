@@ -11,9 +11,9 @@ Features
 
 ## Motivation
 
-For all Russian lovers here from native speaker. You can trust me on this one, or almost trust...
+For all Russian lovers here from the native speaker. You can trust me on this one, or almost trust...
 
-If you found this project useful and there are anything that you feel is not right, please let me know for the sake of the good and proper grammar.
+If you found this project useful and there is anything that you feel is not right, please let me know for the sake of the good and proper grammar.
 
 ## Changelog
 

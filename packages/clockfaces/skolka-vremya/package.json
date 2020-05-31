@@ -1,9 +1,8 @@
 {
-  "version": "0.0.0",
+  "version": "1.0.0",
   "name": "skolka-vremya",
   "description": "Fitbit's Versa clockface which tells time in Russian.",
   "fitbit": {
-    "appUUID": "9986ac30-c97e-463c-99ba-a9fbca47b003",
     "appType": "clockface",
     "appDisplayName": "Skolka vremya?",
     "iconFile": "resources/icon.png",
@@ -16,7 +15,8 @@
       "en": {
         "name": "Skolka vremya?"
       }
-    }
+    },
+    "appUUID": "d67a85f1-330b-40f5-9718-ed60ae9242e6"
   },
   "scripts": {
     "test": "ts-mocha --paths -p ../../tsconfig.test.json test/**/*spec.ts",
